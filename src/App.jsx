@@ -12,7 +12,7 @@ import SettingsPage from './pages/SettingsPage/SettingsPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/maison-seeker">
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<LoginPage />} />

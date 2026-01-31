@@ -23,6 +23,9 @@ ui-debug.log
 # Functions
 functions/node_modules
 
+# Claude
+.claude/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
