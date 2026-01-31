@@ -1,0 +1,23 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: $font-size-xl;
+    color: $color-primary-dark;
+    margin-bottom: $space-xs;
+  }
+}
+
+.subtitle {
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  margin-bottom: $space-xl;
+}
+
+.empty {
+  text-align: center;
+  padding: $space-2xl;
+  color: $color-text-light;
+  font-size: $font-size-lg;
+}

@@ -1,0 +1,59 @@
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: $font-size-xl;
+    color: $color-primary-dark;
+    margin-bottom: $space-xl;
+  }
+}
+
+.section {
+  @include card;
+  padding: $space-lg;
+  margin-bottom: $space-lg;
+
+  h2 {
+    font-size: $font-size-lg;
+    margin-bottom: $space-md;
+    color: $color-text;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space-sm 0;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+}
+
+.code {
+  font-weight: 700;
+  color: $color-primary;
+  letter-spacing: 2px;
+  font-size: $font-size-lg;
+  user-select: all;
+}
+
+.hint {
+  margin-top: $space-md;
+  font-size: $font-size-sm;
+  color: $color-text-light;
+}

@@ -1,0 +1,133 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: $space-lg;
+}
+
+.card {
+  @include card;
+  padding: $space-xl;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-lg;
+  text-align: center;
+
+  h2 {
+    font-size: $font-size-xl;
+    color: $color-primary-dark;
+  }
+
+  p {
+    color: $color-text-light;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  width: 100%;
+}
+
+.choiceBtn {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+  padding: $space-md;
+  width: 100%;
+  font-weight: 600;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-dark;
+  }
+}
+
+.choiceBtnSecondary {
+  @include button-base;
+  background: transparent;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+  padding: $space-md;
+  width: 100%;
+  font-weight: 600;
+
+  &:hover {
+    background: rgba($color-primary, 0.06);
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+  text-align: left;
+
+  span {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    font-weight: 500;
+  }
+
+  input {
+    padding: $space-sm $space-md;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    font-size: $font-size-base;
+    text-align: center;
+    letter-spacing: 2px;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+}
+
+.code {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: $color-primary;
+  letter-spacing: 4px;
+  padding: $space-md $space-xl;
+  background: rgba($color-primary, 0.06);
+  border-radius: $radius-md;
+  user-select: all;
+}
+
+.hint {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+}
+
+.error {
+  background: $color-danger-bg;
+  color: $color-danger;
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  width: 100%;
+}
+
+.logoutLink {
+  @include button-base;
+  background: transparent;
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  padding: $space-xs;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

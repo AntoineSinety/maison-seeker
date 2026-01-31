@@ -1,0 +1,57 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  gap: $space-sm;
+  margin-bottom: $space-lg;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  @include button-base;
+  background: $color-bg-card;
+  color: $color-text-light;
+  border: 1px solid $color-border;
+  font-size: $font-size-sm;
+  padding: $space-xs $space-md;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.filterActive {
+  background: $color-primary;
+  color: white;
+  border-color: $color-primary;
+
+  &:hover {
+    background: $color-primary-dark;
+    border-color: $color-primary-dark;
+    color: white;
+  }
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 $space-xs;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.25);
+  margin-left: $space-xs;
+}
+
+.empty {
+  text-align: center;
+  padding: $space-2xl;
+  color: $color-text-light;
+  font-size: $font-size-lg;
+}

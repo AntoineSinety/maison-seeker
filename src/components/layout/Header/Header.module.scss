@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+  padding: $space-md $space-lg;
+  background: $color-bg-card;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @include respond-to(md) {
+    padding: $space-md $space-xl;
+  }
+}
+
+.brand {
+  font-size: $font-size-lg;
+  font-weight: 700;
+  color: $color-primary-dark;
+  white-space: nowrap;
+
+  a:hover {
+    color: $color-primary;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: $space-sm;
+  flex: 1;
+
+  a {
+    padding: $space-xs $space-md;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-text-light;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover {
+      background: rgba($color-primary, 0.08);
+      color: $color-primary;
+    }
+  }
+
+  .active {
+    background: rgba($color-primary, 0.12);
+    color: $color-primary;
+    font-weight: 600;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  white-space: nowrap;
+}
+
+.name {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  display: none;
+
+  @include respond-to(md) {
+    display: inline;
+  }
+}
+
+.logout {
+  @include button-base;
+  background: transparent;
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  padding: $space-xs $space-sm;
+
+  &:hover {
+    color: $color-danger;
+  }
+}

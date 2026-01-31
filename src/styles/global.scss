@@ -1,0 +1,23 @@
+@use 'reset';
+
+body {
+  font-family: $font-family;
+  background: $color-bg;
+  color: $color-text;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a:hover {
+  color: $color-primary;
+}
+
+::selection {
+  background: $color-primary-light;
+  color: white;
+}

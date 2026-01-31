@@ -1,0 +1,155 @@
+.container {
+  margin-bottom: $space-xl;
+}
+
+.urlForm {
+  display: flex;
+  gap: $space-sm;
+
+  @include respond-to(md) {
+    gap: $space-md;
+  }
+}
+
+.urlInput {
+  flex: 1;
+  padding: $space-md;
+  border: 2px solid $color-border;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &::placeholder {
+    color: $color-text-placeholder;
+  }
+}
+
+.fetchBtn {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+  padding: $space-md $space-xl;
+  font-weight: 600;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-dark;
+  }
+}
+
+.preview {
+  @include card;
+  padding: $space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.previewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: $font-size-lg;
+    color: $color-primary-dark;
+  }
+}
+
+.cancelBtn {
+  @include button-base;
+  background: transparent;
+  color: $color-text-light;
+  font-size: $font-size-sm;
+
+  &:hover {
+    color: $color-danger;
+  }
+}
+
+.previewImage {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: $radius-sm;
+}
+
+.previewTitle {
+  font-weight: 600;
+  font-size: $font-size-base;
+}
+
+.previewDesc {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  @include truncate-text(3);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-md;
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+
+  span {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    padding: $space-sm $space-md;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    font-size: $font-size-base;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.saveBtn {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+  padding: $space-md;
+  font-weight: 600;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-dark;
+  }
+}
+
+.error {
+  margin-top: $space-sm;
+  background: $color-danger-bg;
+  color: $color-danger;
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+}

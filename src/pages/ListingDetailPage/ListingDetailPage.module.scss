@@ -1,0 +1,399 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back {
+  @include button-base;
+  background: transparent;
+  color: $color-text-light;
+  padding: 0;
+  margin-bottom: $space-lg;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &::before {
+    content: '\2190';
+    margin-right: $space-sm;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+
+  @include respond-to(md) {
+    flex-direction: row;
+  }
+}
+
+.imageSection {
+  flex: 1;
+
+  @include respond-to(md) {
+    max-width: 50%;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.galleryMain {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-md;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: $radius-md;
+  object-fit: cover;
+}
+
+.galleryPrev,
+.galleryNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.galleryPrev {
+  left: $space-sm;
+}
+
+.galleryNext {
+  right: $space-sm;
+}
+
+.galleryCount {
+  position: absolute;
+  bottom: $space-sm;
+  right: $space-sm;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: $font-size-sm;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+}
+
+.thumbs {
+  display: flex;
+  gap: $space-xs;
+  overflow-x: auto;
+  padding-bottom: $space-xs;
+}
+
+.thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.thumbActive {
+  opacity: 1;
+  outline: 2px solid $color-primary;
+  outline-offset: 1px;
+}
+
+.noImage {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: $color-border;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-light;
+}
+
+.infoSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-md;
+
+  h1 {
+    font-size: $font-size-xl;
+    flex: 1;
+  }
+}
+
+.source {
+  font-size: $font-size-sm;
+  background: $color-bg;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+  color: $color-text-light;
+  white-space: nowrap;
+}
+
+.keyInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  align-items: center;
+}
+
+.price {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $color-primary-dark;
+}
+
+.surface,
+.city {
+  font-size: $font-size-base;
+  color: $color-text-light;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.badgeInfo,
+.badgeDpe,
+.badgeGes {
+  font-size: $font-size-sm;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+  font-weight: 500;
+}
+
+.badgeInfo {
+  background: $color-bg;
+  color: $color-text;
+}
+
+.badgeDpe {
+  background: rgba($color-secondary, 0.15);
+  color: $color-secondary;
+}
+
+.badgeGes {
+  background: rgba($color-warning, 0.15);
+  color: $color-warning;
+}
+
+.voteSection {
+  padding: $space-md 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+}
+
+.description,
+.notes {
+  h3 {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: $font-size-base;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+}
+
+.notes p {
+  font-style: italic;
+  color: $color-text-light;
+}
+
+.editForm {
+  @include card;
+  padding: $space-lg;
+
+  h3 {
+    font-size: $font-size-base;
+    margin-bottom: $space-md;
+  }
+}
+
+.editFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-md;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+
+    span {
+      font-size: $font-size-sm;
+      color: $color-text-light;
+    }
+
+    input,
+    textarea {
+      padding: $space-sm;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+
+      &:focus {
+        outline: none;
+        border-color: $color-primary;
+      }
+    }
+  }
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.editActions {
+  display: flex;
+  gap: $space-sm;
+  margin-top: $space-md;
+}
+
+.saveBtn {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-dark;
+  }
+}
+
+.cancelBtn {
+  @include button-base;
+  background: transparent;
+  color: $color-text-light;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.meta {
+  display: flex;
+  gap: $space-md;
+  font-size: $font-size-sm;
+  color: $color-text-light;
+}
+
+.archivedBadge {
+  background: $color-warning;
+  color: white;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  padding-top: $space-md;
+  border-top: 1px solid $color-border;
+}
+
+.linkBtn {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background: $color-primary-dark;
+    color: white;
+  }
+}
+
+.editBtn {
+  @include button-base;
+  background: $color-bg;
+  color: $color-text;
+
+  &:hover {
+    background: $color-bg-hover;
+  }
+}
+
+.archiveBtn {
+  @include button-base;
+  background: rgba($color-warning, 0.1);
+  color: $color-warning;
+
+  &:hover {
+    background: rgba($color-warning, 0.2);
+  }
+}
+
+.deleteBtn {
+  @include button-base;
+  background: rgba($color-danger, 0.1);
+  color: $color-danger;
+
+  &:hover {
+    background: rgba($color-danger, 0.2);
+  }
+}
+
+.notFound {
+  text-align: center;
+  padding: $space-2xl;
+
+  p {
+    font-size: $font-size-lg;
+    color: $color-text-light;
+    margin-bottom: $space-lg;
+  }
+
+  button {
+    @include button-base;
+    background: $color-primary;
+    color: white;
+  }
+}

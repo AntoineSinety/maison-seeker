@@ -1,0 +1,188 @@
+// ============================
+// VERSION COMPLETE (detail page)
+// ============================
+
+.fullContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.voteRow {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.voteBtns {
+  display: flex;
+  gap: $space-sm;
+}
+
+.voteBtn {
+  @include button-base;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: $space-sm $space-md;
+  border-radius: $radius-md;
+  background: $color-bg;
+  color: $color-text-light;
+  border: 2px solid transparent;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: $color-border;
+  }
+}
+
+.likeActive {
+  background: rgba($color-like, 0.12);
+  color: $color-like;
+  border-color: $color-like;
+
+  &:hover {
+    border-color: $color-like;
+    background: rgba($color-like, 0.2);
+  }
+}
+
+.dislikeActive {
+  background: rgba($color-dislike, 0.12);
+  color: $color-dislike;
+  border-color: $color-dislike;
+
+  &:hover {
+    border-color: $color-dislike;
+    background: rgba($color-dislike, 0.2);
+  }
+}
+
+.partnerStatus {
+  display: flex;
+  align-items: center;
+}
+
+.partnerBadgeLike,
+.partnerBadgeDislike,
+.partnerBadgeWaiting {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  padding: $space-sm $space-lg;
+  border-radius: $radius-lg;
+  font-size: $font-size-base;
+  font-weight: 700;
+  border: 2px solid;
+}
+
+.partnerBadgeLike {
+  background: rgba($color-like, 0.15);
+  color: $color-like;
+  border-color: rgba($color-like, 0.3);
+}
+
+.partnerBadgeDislike {
+  background: rgba($color-dislike, 0.15);
+  color: $color-dislike;
+  border-color: rgba($color-dislike, 0.3);
+}
+
+.partnerBadgeWaiting {
+  background: rgba($color-neutral, 0.08);
+  color: $color-neutral;
+  border-color: rgba($color-neutral, 0.2);
+  font-weight: 400;
+  font-style: italic;
+  font-size: $font-size-sm;
+}
+
+// ============================
+// VERSION COMPACT (card)
+// ============================
+
+.compactContainer {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+}
+
+.compactMyVotes {
+  display: flex;
+  gap: 2px;
+}
+
+.compactBtn {
+  @include button-base;
+  padding: $space-xs;
+  background: transparent;
+  color: $color-text-light;
+  border-radius: $radius-sm;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+
+  &:hover {
+    background: $color-bg;
+  }
+}
+
+.compactLikeActive {
+  color: $color-like;
+  background: rgba($color-like, 0.12);
+
+  &:hover {
+    background: rgba($color-like, 0.2);
+  }
+}
+
+.compactDislikeActive {
+  color: $color-dislike;
+  background: rgba($color-dislike, 0.12);
+
+  &:hover {
+    background: rgba($color-dislike, 0.2);
+  }
+}
+
+.compactPartner {
+  display: flex;
+  align-items: center;
+  margin-left: 2px;
+}
+
+.compactPartnerLike,
+.compactPartnerDislike,
+.compactPartnerWaiting {
+  display: flex;
+  align-items: center;
+  padding: 3px $space-sm;
+  border-radius: $radius-md;
+  gap: 3px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.compactPartnerLike {
+  color: $color-like;
+  background: rgba($color-like, 0.15);
+}
+
+.compactPartnerDislike {
+  color: $color-dislike;
+  background: rgba($color-dislike, 0.15);
+}
+
+.compactPartnerWaiting {
+  color: $color-neutral;
+  background: rgba($color-neutral, 0.08);
+  font-weight: 400;
+}

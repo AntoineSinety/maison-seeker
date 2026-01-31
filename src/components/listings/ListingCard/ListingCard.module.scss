@@ -1,0 +1,128 @@
+.card {
+  @include card;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: $space-sm;
+  left: $space-sm;
+  background: $color-secondary;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+}
+
+.source {
+  position: absolute;
+  top: $space-sm;
+  right: $space-sm;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px $space-sm;
+  border-radius: $radius-sm;
+}
+
+.content {
+  padding: $space-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: 600;
+  @include truncate-text(2);
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  align-items: center;
+}
+
+.price {
+  font-weight: 700;
+  color: $color-primary-dark;
+  font-size: $font-size-base;
+}
+
+.surface,
+.rooms,
+.city {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+}
+
+.city::before {
+  content: '\2022';
+  margin-right: $space-xs;
+}
+
+.surface::before,
+.rooms::before {
+  content: '\2022';
+  margin-right: $space-xs;
+}
+
+.notes {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  font-style: italic;
+  @include truncate-text(2);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $space-sm;
+  border-top: 1px solid $color-border;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+}
+
+.importedBy {
+  font-size: 0.7rem;
+  color: $color-text-light;
+  font-style: italic;
+}
+
+.externalLink {
+  color: $color-text-light;
+  padding: $space-xs;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
