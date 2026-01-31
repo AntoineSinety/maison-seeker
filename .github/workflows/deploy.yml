@@ -27,6 +27,13 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          VITE_FIREBASE_API_KEY: AIzaSyDDJZj82PaxO4oXKyKXCgj2UuCLwfYpwmc
+          VITE_FIREBASE_AUTH_DOMAIN: home-seeker-e4c16.firebaseapp.com
+          VITE_FIREBASE_PROJECT_ID: home-seeker-e4c16
+          VITE_FIREBASE_STORAGE_BUCKET: home-seeker-e4c16.firebasestorage.app
+          VITE_FIREBASE_MESSAGING_SENDER_ID: "1052344735736"
+          VITE_FIREBASE_APP_ID: 1:1052344735736:web:bf6c15153231eea7c5680d
 
       - name: Copy index.html to 404.html for SPA routing
         run: cp dist/index.html dist/404.html
